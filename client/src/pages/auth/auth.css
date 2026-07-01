@@ -1,0 +1,236 @@
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+  animation: shimmer 15s infinite linear;
+}
+
+@keyframes shimmer {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 500px;
+  padding: 3rem;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  z-index: 1;
+}
+
+.auth-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--maroon-dark), var(--maroon), var(--maroon-light), var(--maroon), var(--maroon-dark));
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.auth-logo {
+  width: 70px;
+  height: 70px;
+  background: var(--sidebar-accent-bg);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 1.8rem;
+  color: var(--white);
+  box-shadow: 0 8px 25px rgba(123, 45, 59, 0.4);
+}
+
+.auth-header h1 {
+  font-size: 1.8rem;
+  color: var(--maroon-dark);
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.auth-header p {
+  color: var(--gray-500);
+  font-size: 0.95rem;
+}
+
+.auth-header .subtitle {
+  color: var(--maroon);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.auth-error {
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+  border: 1px solid #f87171;
+  border-radius: var(--radius-md);
+  color: #991b1b;
+  font-size: 0.9rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+.auth-success {
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+  border: 1px solid #34d399;
+  border-radius: var(--radius-md);
+  color: #065f46;
+  font-size: 0.9rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--maroon-dark);
+}
+
+.form-group label .required {
+  color: var(--maroon-lighter);
+}
+
+.form-group input,
+.form-group select {
+  padding: 0.875rem 1rem;
+  border: 2px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: var(--gray-100);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--maroon);
+  background: var(--white);
+  box-shadow: 0 0 0 4px rgba(123, 45, 59, 0.1);
+}
+
+.form-group input::placeholder {
+  color: var(--gray-400);
+}
+
+.auth-button {
+  padding: 1rem;
+  background: var(--sidebar-accent-bg);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.auth-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(123, 45, 59, 0.4);
+}
+
+.auth-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.auth-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.auth-footer {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--gray-200);
+}
+
+.auth-footer p {
+  color: var(--gray-500);
+  font-size: 0.95rem;
+}
+
+.auth-footer a {
+  color: var(--maroon);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.auth-footer a:hover {
+  color: var(--maroon-dark);
+  text-decoration: underline;
+}
+
+.role-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.role-link {
+  padding: 0.5rem 1rem;
+  background: var(--gray-100);
+  border: 1px solid var(--gray-200);
+  border-radius: 20px;
+  font-size: 0.8rem;
+  color: var(--gray-500);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.role-link:hover {
+  background: var(--maroon);
+  color: var(--white);
+  border-color: var(--maroon);
+}

@@ -1,0 +1,27 @@
+.coordinator-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.coordinator-main {
+  flex: 1;
+  padding: 32px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.coordinator-header {
+  margin-bottom: 32px;
+}
+
+.coordinator-header h1 {
+  margin: 0;
+  font-size: 28px;
+  color: var(--maroon-dark);
+}
+
+.coordinator-header p {
+  margin: 4px 0 0;
+  color: var(--gray-500);
+  font-size: 14px;
+}

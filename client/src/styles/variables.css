@@ -1,0 +1,36 @@
+:root {
+  --sidebar-bg: #1a1a2e;
+  --sidebar-hover: rgba(255, 255, 255, 0.06);
+  --sidebar-active: linear-gradient(90deg, rgba(123, 45, 59, 0.3) 0%, rgba(123, 45, 59, 0.1) 100%);
+  --sidebar-accent: #c0392b;
+  --sidebar-accent-bg: linear-gradient(135deg, #7b2d3b 0%, #4a1a25 100%);
+  --sidebar-text: #a0a3b8;
+  --sidebar-text-active: #f0e6e8;
+  --sidebar-border: rgba(255, 255, 255, 0.08);
+  --sidebar-width: 68px;
+  --sidebar-width-expanded: 220px;
+
+  --maroon-dark: #4a1a25;
+  --maroon: #7b2d3b;
+  --maroon-light: #c0392b;
+  --maroon-lighter: #e74c3c;
+
+  --gray-900: #1a1a1a;
+  --gray-800: #2d2d2d;
+  --gray-700: #404040;
+  --gray-600: #555555;
+  --gray-500: #777777;
+  --gray-400: #999999;
+  --gray-300: #b3b3b3;
+  --gray-200: #d4d4d4;
+  --gray-100: #f0f0f0;
+  --white: #ffffff;
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.25);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.3);
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+}

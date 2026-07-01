@@ -1,0 +1,41 @@
+.dashboard-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1a0a0a 0%, #2d1515 50%, #1a0a0a 100%);
+}
+
+.dashboard-content {
+  text-align: center;
+  padding: 3rem;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.dashboard-content .icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.dashboard-content h1 {
+  font-size: 2rem;
+  color: var(--maroon-dark);
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-content p {
+  color: var(--gray-500);
+}
+
+.dashboard-content .role-badge {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  background: var(--sidebar-accent-bg);
+  color: var(--white);
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: 1rem;
+}

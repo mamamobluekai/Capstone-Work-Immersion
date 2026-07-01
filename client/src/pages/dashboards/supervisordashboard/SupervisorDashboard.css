@@ -1,0 +1,267 @@
+.dashboard-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1a0a0a 0%, #2d1515 50%, #1a0a0a 100%);
+}
+
+.dashboard-content {
+  text-align: center;
+  padding: 3rem;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.dashboard-content .icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.dashboard-content h1 {
+  font-size: 2rem;
+  color: var(--maroon-dark);
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-content p {
+  color: var(--gray-500);
+}
+
+.dashboard-content .role-badge {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  background: var(--sidebar-accent-bg);
+  color: var(--white);
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.coordinator-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.coordinator-main {
+  flex: 1;
+  margin-left: var(--sidebar-width);
+  padding: 2rem;
+  background: var(--gray-50);
+  min-height: 100vh;
+}
+
+.coordinator-header {
+  margin-bottom: 1.5rem;
+}
+
+.coordinator-header h1 {
+  font-size: 1.75rem;
+  color: var(--gray-800);
+  margin: 0;
+}
+
+.coordinator-header p {
+  color: var(--gray-500);
+  margin: 0.25rem 0 0;
+  font-size: 0.9rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.stat-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--gray-800);
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--gray-500);
+  margin-top: 0.25rem;
+}
+
+.stat-pending .stat-value { color: #d97706; }
+.stat-approved .stat-value { color: #059669; }
+.stat-disapproved .stat-value { color: #dc2626; }
+
+.deployment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.deployment-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.deployment-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem;
+  cursor: pointer;
+  user-select: none;
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.deployment-header:hover {
+  background: var(--gray-50);
+}
+
+.deployment-info {
+  flex: 1;
+}
+
+.deployment-title {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--gray-800);
+}
+
+.deployment-meta {
+  font-size: 0.8rem;
+  color: var(--gray-500);
+  margin-top: 0.25rem;
+}
+
+.status-badge {
+  padding: 0.35rem 0.85rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.status-pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.status-approved {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.status-rejected {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.deployment-body {
+  padding: 1.25rem;
+}
+
+.deployment-notes {
+  background: var(--gray-50);
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  color: var(--gray-700);
+  margin-bottom: 1rem;
+}
+
+.deployment-students h4 {
+  font-size: 0.9rem;
+  color: var(--gray-700);
+  margin: 0 0 0.75rem;
+}
+
+.deployment-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--gray-200);
+}
+
+.deployment-actions .btn-primary {
+  padding: 0.6rem 1.25rem;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: var(--maroon);
+  color: var(--white);
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.deployment-actions .btn-primary:hover {
+  opacity: 0.9;
+}
+
+.deployment-actions .btn-delete-batch {
+  padding: 0.6rem 1.25rem;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: #dc2626;
+  color: var(--white);
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.deployment-actions .btn-delete-batch:hover {
+  opacity: 0.85;
+}
+
+.empty-state {
+  text-align: center;
+  color: var(--gray-500);
+  padding: 2rem;
+}
+
+.mono {
+  font-family: monospace;
+}
+
+.btn-link {
+  background: none;
+  border: none;
+  color: var(--maroon);
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1.25rem;
+  padding: 0;
+}
+
+.btn-link:hover {
+  text-decoration: underline;
+}
+
+.assign-success {
+  background: #d1fae5;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  color: #065f46;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .coordinator-main {
+    margin-left: 0;
+    padding: 1rem;
+  }
+}

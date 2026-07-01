@@ -1,0 +1,97 @@
+{
+  "info": {
+    "name": "Work Immersion System - Auth",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Register Admin (Manual DB Insert)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{base_url}}/api/auth/register",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"admin@mnhs.edu.ph\",\n  \"password\": \"admin1234\",\n  \"first_name\": \"Admin\",\n  \"last_name\": \"User\",\n  \"role\": \"admin\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Register Student",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{base_url}}/api/auth/register",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"student@mnhs.edu.ph\",\n  \"password\": \"student1234\",\n  \"first_name\": \"Juan\",\n  \"last_name\": \"Dela Cruz\",\n  \"role\": \"student\",\n  \"student_id\": \"MNHS-2024-001\",\n  \"grade_level\": \"12\",\n  \"strand\": \"STEM\",\n  \"phone\": \"09123456789\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Register Teacher",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{base_url}}/api/auth/register",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"teacher@mnhs.edu.ph\",\n  \"password\": \"teacher1234\",\n  \"first_name\": \"Maria\",\n  \"last_name\": \"Santos\",\n  \"role\": \"teacher\",\n  \"employee_id\": \"MNHS-T-001\",\n  \"department\": \"Senior High School\",\n  \"phone\": \"09123456789\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Register Coordinator",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{base_url}}/api/auth/register",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"coordinator@mnhs.edu.ph\",\n  \"password\": \"coord1234\",\n  \"first_name\": \"Pedro\",\n  \"last_name\": \"Reyes\",\n  \"role\": \"coordinator\",\n  \"employee_id\": \"MNHS-C-001\",\n  \"department\": \"Work Immersion\",\n  \"phone\": \"09123456789\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Register Supervisor",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{base_url}}/api/auth/register",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"supervisor@company.com\",\n  \"password\": \"super1234\",\n  \"first_name\": \"Ana\",\n  \"last_name\": \"Garcia\",\n  \"role\": \"supervisor\",\n  \"company_name\": \"ABC Company\",\n  \"designation\": \"Manager\",\n  \"phone\": \"09123456789\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{base_url}}/api/auth/login",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"admin@mnhs.edu.ph\",\n  \"password\": \"admin1234\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Logout",
+      "request": {
+        "method": "POST",
+        "url": "{{base_url}}/api/auth/logout"
+      }
+    },
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/api/health"
+      }
+    }
+  ],
+  "variable": [
+    { "key": "base_url", "value": "http://localhost:5000" }
+  ]
+}
