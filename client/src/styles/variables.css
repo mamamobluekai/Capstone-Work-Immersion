@@ -24,13 +24,17 @@
   --gray-300: #b3b3b3;
   --gray-200: #d4d4d4;
   --gray-100: #f0f0f0;
+  --gray-50: #f7f7f5;
   --white: #ffffff;
 
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.2);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.25);
-  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.3);
+  --font-sans: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
 
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 14px;
+  --shadow-sm: 0 1px 2px rgba(26, 20, 22, 0.06), 0 1px 3px rgba(26, 20, 22, 0.08);
+  --shadow-md: 0 4px 10px rgba(26, 20, 22, 0.08), 0 8px 20px rgba(26, 20, 22, 0.08);
+  --shadow-lg: 0 10px 20px rgba(26, 20, 22, 0.1), 0 20px 44px rgba(26, 20, 22, 0.12);
+
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 18px;
 }

@@ -1,11 +1,12 @@
 .coordinator-layout {
   display: flex;
   min-height: 100vh;
+  background: var(--gray-50, #f7f7f5);
 }
 
 .coordinator-main {
   flex: 1;
-  padding: 32px;
+  padding: 40px 48px;
   max-width: 1400px;
   margin: 0 auto;
 }
@@ -17,32 +18,38 @@
 .coordinator-header h1 {
   margin: 0;
   font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
   color: var(--maroon-dark);
 }
 
 .coordinator-header p {
-  margin: 4px 0 0;
+  margin: 6px 0 0;
   color: var(--gray-500);
   font-size: 14px;
 }
 
 .upload-card {
   background: var(--white);
-  border-radius: var(--radius-md);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg, 16px);
   padding: 32px;
   box-shadow: var(--shadow-sm);
+  max-width: 720px;
 }
 
 .upload-card h2 {
   margin: 0 0 16px;
   font-size: 18px;
+  font-weight: 700;
   color: var(--gray-800);
 }
 
 .requirements-box {
-  background: var(--gray-100);
-  border-radius: var(--radius-sm);
-  padding: 16px;
+  background: var(--gray-50, #f7f7f5);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md, 14px);
+  padding: 18px 20px;
   margin-bottom: 24px;
 }
 
@@ -50,6 +57,7 @@
   margin: 0 0 8px;
   font-size: 14px;
   color: var(--gray-600);
+  line-height: 1.5;
 }
 
 .requirements-box p:last-child {
@@ -61,10 +69,11 @@
 .upload-error {
   background: #fee2e2;
   padding: 12px 16px;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-sm, 10px);
   color: #991b1b;
   font-size: 14px;
   margin-bottom: 16px;
+  border: 1px solid #fecaca;
 }
 
 .upload-actions {
@@ -78,44 +87,70 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 12px 24px;
+  padding: 12px 26px;
   background: var(--sidebar-accent-bg);
   color: var(--white);
-  border-radius: var(--radius-sm);
+  border: none;
+  border-radius: 999px;
   cursor: pointer;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 14px;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
 }
 
 .upload-btn:hover {
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md, 0 10px 24px rgba(0, 0, 0, 0.1));
+}
+
+.upload-btn:active {
+  transform: translateY(0);
 }
 
 .upload-btn.disabled {
-  opacity: 0.6;
+  opacity: 0.55;
   cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.upload-filename {
+  font-size: 13px;
+  color: var(--gray-500);
 }
 
 .upload-result {
   margin-top: 24px;
-  padding: 16px;
-  border-radius: var(--radius-sm);
+  padding: 16px 18px;
+  border-radius: var(--radius-md, 14px);
   font-size: 14px;
+  border: 1px solid transparent;
 }
 
 .upload-result.success {
   background: #d1fae5;
   color: #065f46;
+  border-color: #a7f3d0;
 }
 
 .upload-result.error {
   background: #fee2e2;
   color: #991b1b;
+  border-color: #fecaca;
 }
 
 .upload-errors {
-  margin-top: 8px;
+  margin-top: 10px;
   font-size: 12px;
+  line-height: 1.6;
+}
+
+@media (max-width: 640px) {
+  .coordinator-main {
+    padding: 24px 20px;
+  }
+
+  .upload-card {
+    padding: 24px;
+  }
 }

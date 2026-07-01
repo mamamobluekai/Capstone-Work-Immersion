@@ -1,16 +1,28 @@
 .assign-error {
   background: #fee2e2;
   padding: 12px 16px;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-sm, 10px);
+  border: 1px solid #fecaca;
   color: #991b1b;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.assign-success {
+  background: #d1fae5;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm, 10px);
+  border: 1px solid #a7f3d0;
+  color: #065f46;
   font-size: 14px;
   margin-bottom: 16px;
 }
 
 .assign-card {
   background: var(--white);
-  border-radius: var(--radius-md);
-  padding: 24px;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg, 16px);
+  padding: 28px;
   box-shadow: var(--shadow-sm);
 }
 
@@ -18,7 +30,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 16px;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 
 .field label {
@@ -32,17 +44,19 @@
 .input,
 .select {
   width: 100%;
-  padding: 10px 12px;
-  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  border-radius: var(--radius-sm, 10px);
   border: 1px solid var(--gray-200);
   font-size: 13px;
   outline: none;
+  background: var(--white);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
 .input:focus,
 .select:focus {
   border-color: var(--maroon);
-  box-shadow: 0 0 0 3px rgba(109, 40, 65, 0.15);
+  box-shadow: 0 0 0 3px rgba(109, 40, 65, 0.12);
 }
 
 .assign-toolbar {
@@ -50,29 +64,34 @@
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .search-input {
   width: 340px;
   max-width: 100%;
-  padding: 9px 12px;
-  border-radius: var(--radius-sm);
+  padding: 9px 14px;
+  border-radius: 999px;
   border: 1px solid var(--gray-200);
   outline: none;
   font-size: 13px;
+  background: var(--white);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
 .search-input:focus {
   border-color: var(--maroon);
-  box-shadow: 0 0 0 3px rgba(109, 40, 65, 0.15);
+  box-shadow: 0 0 0 3px rgba(109, 40, 65, 0.12);
 }
 
 .empty-state {
   text-align: center;
   color: var(--gray-500);
   padding: 40px;
+  font-size: 14px;
 }
+
+/* Student picker */
 
 .students-select-list {
   display: grid;
@@ -87,12 +106,17 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 10px 12px;
+  padding: 11px 14px;
   border: 1px solid var(--gray-200);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-md, 12px);
   cursor: pointer;
   user-select: none;
-  background: var(--gray-50);
+  background: var(--gray-50, #fafaf8);
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.student-row:hover {
+  border-color: var(--gray-300, #d0d0cc);
 }
 
 .student-row.checked {
@@ -117,7 +141,7 @@
 }
 
 .mono {
-  font-family: monospace;
+  font-family: var(--font-mono, monospace);
 }
 
 .assign-footer {
@@ -125,8 +149,8 @@
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  margin-top: 16px;
-  padding-top: 14px;
+  margin-top: 18px;
+  padding-top: 16px;
   border-top: 1px solid var(--gray-200);
 }
 
@@ -136,25 +160,37 @@
 }
 
 .btn-primary {
-  padding: 10px 16px;
+  padding: 10px 20px;
   border: none;
-  border-radius: var(--radius-sm);
+  border-radius: 999px;
   background: var(--maroon);
   color: var(--white);
   font-weight: 700;
+  font-size: 14px;
   cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md, 0 8px 20px rgba(109, 40, 65, 0.2));
 }
 
 .btn-primary:disabled {
-  opacity: 0.6;
+  opacity: 0.55;
   cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
 }
+
+/* Batches */
 
 .batches-section {
   margin-top: 24px;
   background: var(--white);
-  border-radius: var(--radius-md);
-  padding: 24px;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg, 16px);
+  padding: 28px;
   box-shadow: var(--shadow-sm);
 }
 
@@ -162,21 +198,28 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 16px;
+  gap: 12px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
 }
 
 .batches-header h2 {
-  font-size: 16px;
+  font-size: 17px;
+  font-weight: 700;
   color: var(--gray-800);
+  margin: 0;
 }
 
 .batches-header p {
   font-size: 13px;
   color: var(--gray-500);
+  margin: 4px 0 0;
 }
 
 .batches-table-wrapper {
   overflow-x: auto;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md, 12px);
 }
 
 .batches-table {
@@ -187,15 +230,26 @@
 
 .batches-table th,
 .batches-table td {
-  padding: 10px 12px;
+  padding: 11px 14px;
   text-align: left;
-  border-bottom: 1px solid var(--gray-200);
+  border-bottom: 1px solid var(--gray-100, #efefec);
+}
+
+.batches-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.batches-table tbody tr:hover {
+  background: var(--gray-50, #fafaf8);
 }
 
 .batches-table th {
-  font-weight: 600;
-  color: var(--gray-700);
-  background: var(--gray-50);
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--gray-600);
+  background: var(--gray-50, #f7f7f5);
 }
 
 .batch-label {
@@ -206,6 +260,7 @@
 .batch-id {
   font-size: 11px;
   color: var(--gray-400);
+  font-family: var(--font-mono, monospace);
 }
 
 .batch-student-list {
@@ -225,36 +280,52 @@
 }
 
 .btn-delete-batch {
-  padding: 6px 12px;
+  padding: 6px 14px;
   border: none;
-  border-radius: var(--radius-sm);
+  border-radius: 999px;
   background: #dc2626;
   color: var(--white);
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
-  transition: opacity 0.15s;
+  transition: opacity 0.15s ease, transform 0.15s ease;
 }
 
 .btn-delete-batch:hover {
-  opacity: 0.85;
+  opacity: 0.88;
+  transform: translateY(-1px);
 }
 
 .student-chip {
   display: inline-block;
-  padding: 0.25rem 0.6rem;
-  background: var(--gray-100);
-  border-radius: 12px;
+  padding: 0.3rem 0.7rem;
+  background: var(--gray-100, #f0f0ec);
+  border-radius: 999px;
   font-size: 0.75rem;
   color: var(--gray-700);
   font-weight: 500;
 }
 
-.assign-success {
-  background: #d1fae5;
-  padding: 12px 16px;
-  border-radius: var(--radius-sm);
-  color: #065f46;
-  font-size: 14px;
-  margin-bottom: 16px;
+@media (max-width: 900px) {
+  .assign-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .assign-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+
+  .assign-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-primary {
+    width: 100%;
+  }
 }

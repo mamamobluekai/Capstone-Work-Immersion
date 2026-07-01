@@ -2,11 +2,10 @@
 @import './reset.css';
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: var(--gray-100);
+  font-family: var(--font-sans);
+  background: var(--gray-50);
   color: var(--gray-800);
   min-height: 100vh;
   margin-left: var(--sidebar-width);
+  text-rendering: optimizeLegibility;
 }
-
-

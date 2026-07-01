@@ -9,6 +9,7 @@ import AssignImmersion from './AssignImmersion';
 import DeploymentRequest from './DeploymentRequest';
 import SupervisorRequest from '../supervisordashboard/SupervisorRequest';
 import StudentRequirementsReview from './StudentRequirementsReview';
+import ReportSummary from './ReportSummary';
 
 const CoordinatorDashboard = ({ onNavigate }) => {
   const [activePage, setActivePage] = useState('dashboard');
@@ -43,8 +44,11 @@ const CoordinatorDashboard = ({ onNavigate }) => {
         return <DeploymentRequest onNavigate={setActivePage} role={role} />;
       case 'student-requirements':
         return <StudentRequirementsReview onNavigate={setActivePage} role={role} />;
+      case 'reports':
+      case 'report-summary':
+        return <ReportSummary onNavigate={setActivePage} role={role} activeItem={activePage} />;
       default:
-        return <DashboardHome onLogout={handleLogout} onNavigate={setActivePage} role={role} />;
+        return <DashboardHome onLogout={handleLogout} onNavigate={setActivePage} role={role} activeItem={activePage} />;
     }
   };
 

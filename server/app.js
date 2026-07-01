@@ -11,6 +11,7 @@ const userRoutes = require('./routes/user.routes');
 const immersionRoutes = require('./routes/immersion.routes');
 const deploymentRoutes = require('./routes/deployment.routes');
 const requirementsRoutes = require('./routes/requirements.routes');
+const reportRoutes = require('./routes/report.routes');
 
 const app = express();
 
@@ -28,6 +29,7 @@ app.use('/api/users', userRoutes);
 app.use('/api/immersion', immersionRoutes);
 app.use('/api/deployment-requests', deploymentRoutes);
 app.use('/api', requirementsRoutes);
+app.use('/api/reports', reportRoutes);
 
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });

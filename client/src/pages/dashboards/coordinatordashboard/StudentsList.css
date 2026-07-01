@@ -1,11 +1,12 @@
 .coordinator-layout {
   display: flex;
   min-height: 100vh;
+  background: var(--gray-50, #f7f7f5);
 }
 
 .coordinator-main {
   flex: 1;
-  padding: 32px;
+  padding: 40px 48px;
   max-width: 1400px;
   margin: 0 auto;
 }
@@ -17,21 +18,26 @@
 .coordinator-header h1 {
   margin: 0;
   font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
   color: var(--maroon-dark);
 }
 
 .coordinator-header p {
-  margin: 4px 0 0;
+  margin: 6px 0 0;
   color: var(--gray-500);
   font-size: 14px;
 }
 
 .students-card {
   background: var(--white);
-  border-radius: var(--radius-md);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg, 16px);
   padding: 24px;
   box-shadow: var(--shadow-sm);
 }
+
+/* Toolbar */
 
 .students-toolbar {
   display: flex;
@@ -39,18 +45,24 @@
   align-items: center;
   margin-bottom: 20px;
   gap: 12px;
+  flex-wrap: wrap;
 }
 
 .students-toolbar h2 {
   margin: 0;
-  font-size: 18px;
+  font-size: 17px;
+  font-weight: 700;
   color: var(--gray-800);
 }
 
 .filter-group {
   display: flex;
-  gap: 8px;
+  gap: 6px;
   flex-wrap: wrap;
+  background: var(--gray-50, #f3f3f0);
+  border: 1px solid var(--gray-200);
+  border-radius: 999px;
+  padding: 4px;
 }
 
 .search-group {
@@ -59,32 +71,38 @@
 }
 
 .search-input {
-  min-width: 320px;
-  width: 320px;
-  padding: 9px 12px;
+  min-width: 300px;
+  width: 300px;
+  padding: 9px 14px;
   border: 1px solid var(--gray-200);
-  border-radius: var(--radius-sm);
+  border-radius: 999px;
   outline: none;
   font-size: 13px;
   color: var(--gray-800);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
 .search-input:focus {
   border-color: var(--maroon);
-  box-shadow: 0 0 0 3px rgba(109, 40, 65, 0.15);
+  box-shadow: 0 0 0 3px rgba(109, 40, 65, 0.12);
 }
 
 .filter-btn {
-  padding: 8px 16px;
+  padding: 7px 16px;
   border: none;
-  border-radius: var(--radius-sm);
+  border-radius: 999px;
   cursor: pointer;
   font-weight: 600;
   font-size: 13px;
   text-transform: capitalize;
-  background: var(--gray-100);
-  color: var(--gray-700);
-  transition: background 0.2s, color 0.2s;
+  background: transparent;
+  color: var(--gray-600);
+  transition: background 0.18s ease, color 0.18s ease;
+}
+
+.filter-btn:hover {
+  background: var(--white);
+  color: var(--gray-800);
 }
 
 .filter-btn.active {
@@ -95,20 +113,26 @@
 .upload-error {
   background: #fee2e2;
   padding: 12px 16px;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-sm, 10px);
   color: #991b1b;
   font-size: 14px;
   margin-bottom: 16px;
+  border: 1px solid #fecaca;
 }
 
 .empty-state {
   text-align: center;
   color: var(--gray-500);
-  padding: 40px;
+  padding: 48px 24px;
+  font-size: 14px;
 }
+
+/* Table */
 
 .table-wrapper {
   overflow-x: auto;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md, 14px);
 }
 
 .students-table {
@@ -120,43 +144,73 @@
 .students-table th {
   padding: 12px 16px;
   text-align: left;
-  border-bottom: 2px solid var(--gray-200);
-  color: var(--gray-700);
-  background: var(--gray-100);
+  border-bottom: 1px solid var(--gray-200);
+  color: var(--gray-600);
+  background: var(--gray-50, #f7f7f5);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.students-table th:first-child {
+  border-top-left-radius: var(--radius-md, 14px);
+}
+
+.students-table th:last-child {
+  border-top-right-radius: var(--radius-md, 14px);
 }
 
 .students-table td {
   padding: 12px 16px;
-  border-bottom: 1px solid var(--gray-200);
+  border-bottom: 1px solid var(--gray-100, #efefec);
+  color: var(--gray-800);
+}
+
+.students-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.students-table tbody tr {
+  transition: background 0.15s ease;
+}
+
+.students-table tbody tr:hover {
+  background: var(--gray-50, #fafaf8);
 }
 
 .student-id {
-  font-family: monospace;
+  font-family: var(--font-mono, monospace);
   font-weight: 600;
+  color: var(--gray-700);
 }
 
 .status-badge {
   display: inline-block;
-  padding: 4px 10px;
-  border-radius: 12px;
+  padding: 4px 12px;
+  border-radius: 999px;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: capitalize;
-  color: white;
 }
 
 .status-pending {
-  background: #f59e0b;
+  background: #fef3e2;
+  color: #b97a10;
 }
 
 .status-approved,
 .status-coordinator_approved {
-  background: #10b981;
+  background: #e6f7ef;
+  color: #0e9f6e;
 }
 
 .status-disapproved {
-  background: #ef4444;
+  background: #fdeaea;
+  color: #dc3545;
 }
+
+/* Bulk actions */
 
 .bulk-actions {
   display: flex;
@@ -182,25 +236,40 @@
   width: 16px;
   height: 16px;
   cursor: pointer;
+  accent-color: var(--maroon);
 }
 
 .selected-row {
-  background: rgba(109, 40, 65, 0.05);
+  background: rgba(109, 40, 65, 0.05) !important;
 }
+
+.student-actions,
+.action-buttons {
   display: flex;
-  gap: 4px;
+  gap: 6px;
+  flex-wrap: wrap;
 }
 
 .btn-approve,
 .btn-disapprove,
-.btn-delete {
-  padding: 4px 10px;
+.btn-delete,
+.btn-set-password {
+  padding: 5px 12px;
   border: none;
-  border-radius: 4px;
+  border-radius: 999px;
   cursor: pointer;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 700;
   color: white;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.btn-approve:hover,
+.btn-disapprove:hover,
+.btn-delete:hover,
+.btn-set-password:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
 }
 
 .btn-approve {
@@ -217,20 +286,11 @@
 }
 
 .btn-set-password {
-  padding: 4px 10px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 12px;
-  font-weight: 600;
-  color: white;
   background: #2a5298;
   margin-left: 4px;
 }
 
-.btn-set-password:hover {
-  background: #1a3a5c;
-}
+/* Modal */
 
 .modal-overlay {
   position: fixed;
@@ -238,7 +298,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(20, 15, 15, 0.55);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -247,11 +307,11 @@
 
 .modal-content {
   background: var(--white);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-lg, 16px);
   padding: 32px;
   width: 100%;
   max-width: 450px;
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-lg, 0 20px 40px rgba(0, 0, 0, 0.18));
   position: relative;
 }
 
@@ -264,25 +324,46 @@
 
 .modal-header h2 {
   margin: 0;
-  font-size: 20px;
+  font-size: 19px;
+  font-weight: 700;
   color: var(--maroon-dark);
 }
 
 .modal-close {
   background: none;
   border: none;
-  font-size: 28px;
+  font-size: 24px;
   cursor: pointer;
   color: var(--gray-500);
   line-height: 1;
+  padding: 4px;
+  border-radius: 8px;
+  transition: background 0.15s ease, color 0.15s ease;
 }
 
 .modal-close:hover {
   color: var(--gray-800);
+  background: var(--gray-100, #f0f0ec);
 }
 
 .modal-student-info {
   color: var(--gray-500);
   font-size: 14px;
   margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .coordinator-main {
+    padding: 24px 20px;
+  }
+
+  .search-input {
+    min-width: 100%;
+    width: 100%;
+  }
+
+  .students-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
